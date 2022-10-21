@@ -25,20 +25,24 @@ function App() {
   */
 
   //function to handle contacts
-  const handleChangeContacts = ({target}) => {
-    const { name, value } = target;
+  const handleChangeContacts = (name, phone, email) => {
     setContact((prev) => ({
       ...prev,
-      [name] : value
+      name: name,
+      phone: phone,
+      email: email
+
     }))
   }
 
   //function to handle appointments
-  const handleChangeAppointments = ({target}) => {
-    const { name, value } = target;
+  const handleChangeAppointments = (title, contact, date, time) => {
     setAppointments((prev) => ({
       ...prev,
-      [name] : value
+      title: title,
+      contact: contact,
+      date: date,
+      time: time
     }))
   }
 
@@ -60,11 +64,11 @@ function App() {
           </Route>
           <Route path={ROUTES.CONTACTS}>
             {/* Add props to ContactsPage */}
-            <ContactsPage value={contact} onChange={handleChangeContacts}/>
+            <ContactsPage value={contact} handleChangeContacts={handleChangeContacts}/>
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage value={appointment} onChange={handleChangeAppointments}/>
+            <AppointmentsPage value={appointment} handleChangeAppointments={handleChangeAppointments}/>
           </Route>
         </Switch>
       </main>
