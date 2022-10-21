@@ -64,11 +64,11 @@ function App() {
           </Route>
           <Route path={ROUTES.CONTACTS}>
             {/* Add props to ContactsPage */}
-            <ContactsPage value={contact} handleChangeContacts={handleChangeContacts}/>
+            <ContactsPage value={contact} addContacts={handleChangeContacts}/>
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage value={appointment} handleChangeAppointments={handleChangeAppointments}/>
+            <AppointmentsPage value={appointment} addAppointments={handleChangeAppointments}/>
           </Route>
         </Switch>
       </main>
