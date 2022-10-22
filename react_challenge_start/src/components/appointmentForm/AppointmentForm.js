@@ -62,6 +62,10 @@ export const AppointmentForm = ({
         onChange={(e) => setTime(e.target.value)}
         required />
       </label>
+      <input 
+      type='submit' 
+      name='submit'
+      value='Add Appointment'/>
     </form>
   );
 };
