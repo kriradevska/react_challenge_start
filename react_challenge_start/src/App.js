@@ -11,7 +11,7 @@ function App() {
   */
 
   // State variables for contacts and appointments
-  const [contacts, setContact] = useState([]);
+  const [contacts, setContacts] = useState([]);
   const [appointments, setAppointments] = useState([]);
 
   const ROUTES = {
@@ -26,7 +26,7 @@ function App() {
 
   //function to handle contacts
   const handleChangeContacts = (name, phone, email) => {
-    setContact((prev) => ({
+    setContacts((prev) => ({
       ...prev,
       name: name,
       phone: phone,
@@ -68,7 +68,7 @@ function App() {
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage appointments={appointments} addAppointments={handleChangeAppointments}/>
+            <AppointmentsPage appointments={appointments} addAppointments={handleChangeAppointments} contacts={contacts}/>
           </Route>
         </Switch>
       </main>
