@@ -1,4 +1,4 @@
-# Challenge Project: Jamming
+# Challenge Project: Appointment Planner
 
 ## General Info
 
